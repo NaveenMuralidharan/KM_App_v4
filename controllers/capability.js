@@ -81,6 +81,32 @@ router.post("/", (req, res)=>{
     
 })
 
+// EDIT route
+router.get("/:id/edit", (req, res)=>{
+
+    Capability.findById(req.params.id, (err, data)=>{
+        // render edit form page
+        res.render("capability/edit.ejs", { capability: data })
+    })
+    
+})
+
+
+// UPDATE route
+router.put("/:id", (req, res)=>{
+
+    Capability.findByIdAndUpdate(req.params.id, 
+                                req.body, 
+                                {new: true}, 
+                                (err, data)=>{
+
+                        console.log(data)
+                        res.redirect(`/capabilities/${req.params.id}`)
+    })
+
+})
+
+
 // Show route
 router.get("/:id", (req, res)=>{
 

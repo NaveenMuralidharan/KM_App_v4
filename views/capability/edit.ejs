@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <nav>
+        <a href="/capabilities/<%=capability._id%>">Back</a>
+        <hr>
+        
+    </nav>
+    
+    <div>
+        <form action="/capabilities/<%= capability._id %>?_method=PUT" method="POST">
+
+            <fieldset>
+
+                <legend>Edit <%= capability.capabilityName %></legend>
+
+                <label> Capability Name:
+                    <input 
+                        type="text" 
+                        name="capabilityName" 
+                        value="<%= capability.capabilityName %>"
+                        placeholder = "<%= capability.capabilityName %>">
+                </label>
+
+                <label> Value enabled by this capability:
+                    <input 
+                        type="text" 
+                        name="valueEnabled" 
+                        value="<%= capability.valueEnabled %>"
+                        placeholder = "<%= capability.valueEnabled %>">
+                </label>
+
+            </fieldset>
+
+            <input type="submit" value="Save changes">
+        
+        </form>
+    </div>
+    
+
+</body>
+
+</html> 
