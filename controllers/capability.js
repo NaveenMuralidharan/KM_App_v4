@@ -106,6 +106,14 @@ router.put("/:id", (req, res)=>{
 
 })
 
+// DELETE route
+router.delete("/:id", (req, res)=>{
+
+    Capability.findByIdAndDelete(req.params.id, (err, data)=>{
+        res.redirect("/capabilities")
+    })
+
+})
 
 // Show route
 router.get("/:id", (req, res)=>{
