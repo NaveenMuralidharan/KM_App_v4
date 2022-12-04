@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <nav>
+        <a href="/capabilities">Back</a>
+        <hr>
+        
+    </nav>
+    
+    <div>
+       <article>
+            <h2> <%= capability.capabilityName %></h2>
+            <p>Value: <%= capability.valueEnabled %></p>
+       </article>
+    </div>
+    
+
+</body>
+
+</html> 

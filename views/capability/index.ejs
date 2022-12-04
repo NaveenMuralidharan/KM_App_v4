@@ -4,13 +4,19 @@
 
 <body>
     <%- include('../partials/header.ejs') %>
-
+<nav>
+    <a href="/capabilities/new"> Add capability </a>
+</nav>
     <div>
         <% capabilities.forEach((capability)=>{ %>
-            
+
             <article>
-                <h2> Capability - <%= capability.capabilityName %> </h2>
-                <p> Value enabled - <%= capability.valueEnabled %></p>
+                <h2> Capability - 
+                    <a href="/capabilities/<%= capability._id %>">
+                        <%= capability.capabilityName %>
+                    </a> 
+                </h2>
+                
             </article>
 
         <% }) %>
