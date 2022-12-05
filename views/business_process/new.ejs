@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+<main>
+    <div>
+        <form action="/businessprocesses/<%= capabilityId %>" method="POST">
+            <fieldset>
+                <legend> Add Business Process </legend>
+
+                <label>
+                    Business process name:
+                    <input type="text" name="name" required>
+                </label>
+                <label>
+                    Purpose:
+                    <input type="text" name="purpose" required>
+                </label>
+            </fieldset>
+
+            <input type="submit" value="Add Business Process">
+            
+        </form>
+    </div>
+</main>
+
+</body>
+</html>    

@@ -7,6 +7,8 @@ const express = require("express")
 const methodOverride = require("method-override")
 const morgan = require("morgan")
 const CapabilityRouter = require("./controllers/capability")
+const BusinessProcessRouter = require("./controllers/businessProcess")
+
 // const mongoose = require("mongoose")
 
 // //////////////////////////////////
@@ -59,6 +61,8 @@ app.use(methodOverride("_method"))//override for put and delete reqs from forms
 app.use(express.urlencoded({extended:true}))//parse url encoded req bodies
 app.use(express.static("public"))//serve files from public folder, statically
 app.use("/capabilities", CapabilityRouter)
+app.use("/businessprocesses", BusinessProcessRouter)
+
 
 //////////////////
 /////Routes

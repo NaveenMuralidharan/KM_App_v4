@@ -11,7 +11,8 @@ const { Schema, model } = mongoose
 const capabilitySchema = new Schema({
                                         capabilityName: String,
                                         valueEnabled: String,
-                                        businessProcesses: [{type: String}]
+                                        businessProcesses: [ { businessProcessId: String, 
+                                            businessProcessName: String}]
 })
 
 // create capability model

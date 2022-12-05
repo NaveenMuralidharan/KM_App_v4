@@ -118,6 +118,7 @@ router.delete("/:id", (req, res)=>{
 // Show route
 router.get("/:id", (req, res)=>{
 
+    console.log("get capabilities route")
     // find and retrieve data
     Capability.findById(req.params.id, (err, data)=>{
         res.render("capability/show.ejs", { capability: data })

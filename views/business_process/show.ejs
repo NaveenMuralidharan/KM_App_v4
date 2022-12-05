@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <nav>
+        <a href="/capabilities/<%= capabilityId %>">Back</a>
+    </nav>
+    Name: <%= businessProcess.name %>
+    Purpose: <%= businessProcess.purpose %>
+
+</body>
+</html>
