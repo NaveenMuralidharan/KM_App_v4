@@ -16,6 +16,28 @@ router.get("/:capabilityId/new", (req, res)=>{
     res.render("business_process/new.ejs", { capabilityId: req.params.capabilityId })
 })
 
+// EDIT route
+router.get("/:capabilityId/:businessProcessId/edit", (req, res)=>{
+    
+    BusinessProcess.findById(req.params.businessProcessId, (err, data)=>{
+        res.render("business_process/edit.ejs", { businessProcess : data, capabilityId: req.params.capabilityId })
+    })
+
+})
+
+// UPDATE route
+router.put("/:capabilityId/:businessProcessId", (req, res)=>{
+
+    BusinessProcess.findByIdAndUpdate(
+                                        req.params.businessProcessId,
+                                        req.body,
+                                        { new: true },
+                                        (err, data)=>{
+                                                        res.redirect(`/businessprocesses/${req.params.capabilityId}/${req.params.businessProcessId}`)
+
+                                        })
+})
+
 // CREATE route
 router.post("/:capabilityId", (req, res)=>{
 
