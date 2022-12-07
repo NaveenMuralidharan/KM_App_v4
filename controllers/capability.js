@@ -3,6 +3,7 @@
 ////////////////
 
 const express = require("express")
+const BusinessProcess = require("../models/business_process")
 
 const Capability = require("../models/capability")
 
@@ -121,7 +122,9 @@ router.get("/:id", (req, res)=>{
     console.log("get capabilities route")
     // find and retrieve data
     Capability.findById(req.params.id, (err, data)=>{
-        res.render("capability/show.ejs", { capability: data })
+
+     res.render("capability/show.ejs", { capability: data })
+        
     })
 
 })

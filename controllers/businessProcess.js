@@ -16,6 +16,7 @@ router.get("/:capabilityId/new", (req, res)=>{
     res.render("business_process/new.ejs", { capabilityId: req.params.capabilityId })
 })
 
+
 // EDIT route
 router.get("/:capabilityId/:businessProcessId/edit", (req, res)=>{
     
