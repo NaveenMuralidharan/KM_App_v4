@@ -12,6 +12,11 @@
     Purpose: <%= businessProcess.purpose %>
 
     <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit">Edit</a>
+
+    <form action="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+
 </body>
 </html>
 

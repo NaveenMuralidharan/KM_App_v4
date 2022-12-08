@@ -11,6 +11,9 @@ const router = express.Router()
 ////ROUTES//////////////
 ////////////////////////
 
+
+
+
 // New route
 router.get("/:capabilityId/new", (req, res)=>{
     res.render("business_process/new.ejs", { capabilityId: req.params.capabilityId })
@@ -38,6 +41,8 @@ router.put("/:capabilityId/:businessProcessId", (req, res)=>{
 
                                         })
 })
+
+
 
 // CREATE route
 router.post("/:capabilityId", (req, res)=>{
@@ -89,6 +94,13 @@ router.get("/:capabilityId/:businessProcessId", (req, res)=>{
     
 })
 
+// // DELETE route
+router.delete("/:capabilityTd/:businessProcessId", (req, res)=>{
+
+    BusinessProcess.findByIdAndDelete(req.params.businessProcessId, (err, data)=>{
+        res.redirect(`/capabilities/${req.params.capabilityTd}`)
+    })
+})
 
 // Export router
-module.exports = router
+module.exports = router;
