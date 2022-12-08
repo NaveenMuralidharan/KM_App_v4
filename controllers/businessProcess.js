@@ -13,9 +13,8 @@ const router = express.Router()
 
 
 
-
 // New route
-router.get("/:capabilityId/new", (req, res)=>{
+router.get("/new/:capabilityId", (req, res)=>{
     res.render("business_process/new.ejs", { capabilityId: req.params.capabilityId })
 })
 
@@ -52,29 +51,39 @@ router.post("/:capabilityId", (req, res)=>{
 
     // create an empty capabilities array to store
     // which capability business process belongs to, push 
-    req.body.capabilities = []
-    req.body.capabilities.push(req.params.capabilityId)
+    
+    req.body.capabilityId = req.params.capabilityId
 
 
     BusinessProcess.create(req.body, (err, data)=>{
-        console.log("Business process created "+ data)
-
+        
         // update capability to link business process to it
 
-        let businessProcess = { businessProcessId: data._id, 
-                                businessProcessName: data.name } 
+    //     let businessProcess = { businessProcessId: data._id, 
+    //                             businessProcessName: data.name } 
 
-       Capability.updateOne({_id: req.params.capabilityId},
-                            {$push: { businessProcesses: businessProcess }},
-                            (err, data)=>{
-                                console.log("updated capability with bp "+data)
-                                res.redirect(`/capabilities/${req.params.capabilityId}`)
-                            }
-            )
-
+    //    Capability.updateOne({_id: req.params.capabilityId},
+    //                         {$push: { businessProcesses: businessProcess }},
+    //                         (err, data)=>{
+    //                             console.log("updated capability with bp "+data)
+    //                             res.redirect(`/capabilities/${req.params.capabilityId}`)
+    //                         }
+    //         )
+        res.redirect(`/capabilities/${req.params.capabilityId}`)
         
     })
 })
+
+
+
+// INDEX route
+router.get("/:capabilityName/:capabilityId/index", (req, res)=>{
+    BusinessProcess.find({ capabilityId: req.params.capabilityId }, (err, data)=>{
+        res.render("business_process/index.ejs", { processes: data, capabilityName: req.params.capabilityName, capabilityId: req.params.capabilityId })
+    })
+})
+
+
 
 // show route
 router.get("/:capabilityId/:businessProcessId", (req, res)=>{
@@ -101,6 +110,10 @@ router.delete("/:capabilityTd/:businessProcessId", (req, res)=>{
         res.redirect(`/capabilities/${req.params.capabilityTd}`)
     })
 })
+
+
+
+
 
 // Export router
 module.exports = router;

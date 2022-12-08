@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <nav>
+        <a href="/capabilities/<%= capabilityId %>">Back</a>
+    </nav>
+
+    <h2>Processes for <%= capabilityName %></h2>
+    
+    <div>
+        <a href="/businessprocesses/new/<%=capabilityId%>""> <button> Add New Process </button> </a> 
+    </div>
+    <hr>
+
+
+    <ul>
+        <% processes.forEach((process)=>{ %>
+
+            <li>
+                <a href="/businessprocesses/<%=capabilityId%>/<%=process._id%>"> <%= process.name %> </a>
+            </li>
+
+        <% }) %>
+            
+    </ul>
+    
+
+</body>
+</html>
+

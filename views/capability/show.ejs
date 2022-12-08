@@ -7,21 +7,21 @@
 
     <nav>
         <a href="/capabilities">Back</a>
-        <hr>
+
         <a href="/capabilities/<%=capability._id%>/edit">Edit Capability</a>
-        <hr>
-        <a href="/businessprocesses/<%=capability._id%>/new">Add Business Process</a>
+        <!-- <hr>
+        <a href="/businessprocesses/new/<%=capability._id%>">Add Business Process</a> -->
     </nav>
     
     <div>
        <article>
             <h2> <%= capability.capabilityName %></h2>
-            <p>Value: <%= capability.valueEnabled %></p>
+            <p>Value enabled: <%= capability.valueEnabled %></p>
             <form action="/capabilities/<%= capability._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete">
+                <input type="submit" value="Delete"> 
             </form>
             
-            <% if(capability.businessProcesses.length > 0){ %>
+            <!-- <% if(capability.businessProcesses.length > 0){ %>
                 <ul>
                     <% capability.businessProcesses.forEach((businessProcess)=>{ %>
                         <li> <a href="/businessprocesses/<%= capability._id %>/<%= businessProcess.businessProcessId %>"> <%= businessProcess.businessProcessName %> </a></li>
@@ -29,13 +29,23 @@
                 </ul>
                 
             <% } %>
-            
+             -->
   
            
 
        </article>
     </div>
-    
+
+    <div>
+        <a href="/businessprocesses/<%= capability.capabilityName %>/<%= capability._id %>/index"><button> View Processes </button> </a>
+    </div>
+
+    <div>
+        <form action="/businessprocesses/<%= capability._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete all processes">
+        </form>
+        
+    </div>
 
 </body>
 
