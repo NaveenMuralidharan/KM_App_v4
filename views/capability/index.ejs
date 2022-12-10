@@ -5,7 +5,12 @@
 <body>
     <%- include('../partials/header.ejs') %>
 <nav>
-    <a href="/capabilities/new"> Add capability </a>
+    <!-- <a href="/capabilities/new"> Add capability </a> -->
+    <nav>
+        <a href="/">How it works</a>
+        <a href="/capabilities/new">Add Capability</a>
+        
+    </nav>
 </nav>
     <div>
         <% capabilities.forEach((capability)=>{ %>
