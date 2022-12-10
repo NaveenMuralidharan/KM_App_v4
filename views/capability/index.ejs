@@ -5,24 +5,39 @@
 <body>
     <%- include('../partials/header.ejs') %>
 <nav>
-    <!-- <a href="/capabilities/new"> Add capability </a> -->
+    <!-- <a href="/capabilities/new"    > Add capability </a> -->
     <nav>
         <a href="/">How it works</a>
         <a href="/capabilities/new">Add Capability</a>
         
     </nav>
 </nav>
-    <div>
-        <% capabilities.forEach((capability)=>{ %>
+    <div class = "container" >
+        <% capabilities.forEach((capability, i)=>{ %>
 
-            <article>
-                <h2> Capability - 
-                    <a href="/capabilities/<%= capability._id %>">
-                        <%= capability.capabilityName %>
-                    </a> 
-                </h2>
+            <div class="row">
+
+                <div class="col">
+
+                    <h2> <%= i + 1 %> - 
+
+                        <a href="/capabilities/<%= capability._id %>">
+                            <%= capability.capabilityName %>
+                        </a> 
+                    
+                    </h2>
+
+                </div>
                 
-            </article>
+                <div class="col">
+                    <p>
+                        <%= capability.valueEnabled %>
+                    </p>
+                    
+                </div>    
+            </div>
+            <hr>    
+                
 
         <% }) %>
     </div>

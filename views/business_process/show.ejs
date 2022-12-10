@@ -7,16 +7,23 @@
 
     <nav>
         <a href="/capabilities/<%= capabilityId %>">Back</a>
-        <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit">Edit Process</a>
+        <!-- <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit">Edit Process</a> -->
     </nav>
-    Name: <%= businessProcess.name %>
-    Purpose: <%= businessProcess.purpose %>
-
-    <!-- <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit">Edit</a> -->
-
+    <hr>
+    <h3>Name: <%= businessProcess.name %></h3>
+    <br>
+    <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit"><button>Edit Process</button></a>
+    
     <form action="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>?_method=DELETE" method="POST">
         <input type="submit" value="Delete">
     </form>
+    <hr>
+    <h3>Purpose:</h3> 
+    <p><%= businessProcess.purpose %></p>
+
+    <!-- <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit">Edit</a> -->
+
+ 
 
 </body>
 </html>

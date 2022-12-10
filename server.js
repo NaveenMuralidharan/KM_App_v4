@@ -62,7 +62,7 @@ app.use(express.urlencoded({extended:true}))//parse url encoded req bodies
 app.use(express.static("public"))//serve files from public folder, statically
 app.use("/capabilities", CapabilityRouter)
 app.use("/businessprocesses", BusinessProcessRouter)
-
+app.use(express.static("public")) // serve files from public statically
 
 //////////////////
 /////Routes

@@ -6,7 +6,7 @@
     <%- include('../partials/header.ejs') %>
 
     <nav>
-        <a href="/businessprocesses/<%=businessProcess._id%>">Back</a>
+        <a href="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>">Back</a>
     </nav>
 
     <form action="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>?_method=PUT" method="post">
