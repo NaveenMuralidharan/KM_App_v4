@@ -8,6 +8,7 @@ const methodOverride = require("method-override")
 const morgan = require("morgan")
 const CapabilityRouter = require("./controllers/capability")
 const BusinessProcessRouter = require("./controllers/businessProcess")
+const UserRouter = require("./controllers/user")
 
 // const mongoose = require("mongoose")
 
@@ -62,6 +63,7 @@ app.use(express.urlencoded({extended:true}))//parse url encoded req bodies
 app.use(express.static("public"))//serve files from public folder, statically
 app.use("/capabilities", CapabilityRouter)
 app.use("/businessprocesses", BusinessProcessRouter)
+app.use("/users", UserRouter)
 app.use(express.static("public")) // serve files from public statically
 
 //////////////////
@@ -69,7 +71,7 @@ app.use(express.static("public")) // serve files from public statically
 /////////////////
 
 app.get("/", (req, res)=>{
-    res.send("Your app is running")
+    res.render("home.ejs")
 })
 
 

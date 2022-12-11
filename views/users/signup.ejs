@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <hr>
+    <ul class="nav">
+        <li class="nav-item">
+            <a href="/" class="nav-link">Back</a>
+        </li>
+    </ul>
+    <hr>
+
+    <form action="" method="post" class="mb-3">
+        <legend>Signup</legend>
+        
+        <label class="form-label"> Username: </label>
+        <input type="text" class="form-control" name="username">
+
+        <label class="form-label">Password:</label>
+        <input type="password" name="password" class="form-control">
+
+        <input type="submit" value="Signup" class="btn btn-outline-primary">
+
+        <a href="/"><button class="btn btn-outline-danger">Cancel</button></a>
+    </form>
+
+</body>
+</html>
