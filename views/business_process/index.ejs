@@ -51,9 +51,9 @@
                             <a href="/businessprocesses/<%=capabilityId%>/<%=process._id%>"> <%= process.name %> </a>
                         </h3> -->
                         <h3>
-                            <a href="/businessprocesses/<%=capabilityId%>/<%=process._id%>"> <%= process.name %> </a>
+                            <a href="/businessprocesses/<%=capabilityId%>/<%=process._id%>"> <%= i + 1 %> . <%= process.name %> </a>
                         </h3>
-                        <p><%= process.purpose %></p>                         
+                        <p class="text-truncate"><%= process.purpose %></p>                         
                     </div>
 
                     <!-- <div class="col-8">

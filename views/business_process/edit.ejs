@@ -4,12 +4,16 @@
 
 <body>
     <%- include('../partials/header.ejs') %>
+    <hr>
 
-    <nav>
-        <a href="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>">Back</a>
-    </nav>
-
-    <form action="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>?_method=PUT" method="post">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>">Back</a>
+        </li>
+        <!-- <a href="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>">Back</a> -->
+    </ul>
+    <hr>
+    <form action="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>?_method=PUT" method="post" class="mb-3">
         <fieldset>
 
             <legend> Edit Business Process </legend>
@@ -24,8 +28,12 @@
 
         </fieldset>
 
-        <input type="submit" value="Save changes">
-
+        <input type="submit" value="Save changes" class="btn btn-outline-primary">
+        <a href="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>">
+            <button class="btn btn-outline-danger">
+                Cancel
+            </button>
+        </a>
     </form>
 
 

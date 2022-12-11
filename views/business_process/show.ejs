@@ -4,18 +4,20 @@
 
 <body>
     <%- include('../partials/header.ejs') %>
-
-    <nav>
-        <a href="/capabilities/<%= capabilityId %>">Back</a>
+<hr>
+    <ul class="nav">
+        <li class="nav-item">
+            <a href="/capabilities/<%= capabilityId %>" class="nav-link">Back</a>
+        </li>        
         <!-- <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit">Edit Process</a> -->
-    </nav>
+    </ul>
     <hr>
-    <h3>Name: <%= businessProcess.name %></h3>
+    <h3><%= businessProcess.name %> Process Document</h3>
     <br>
-    <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit"><button>Edit Process</button></a>
-    
+    <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit"><button class="btn btn-outline-primary">Edit Process</button></a>
+    <br><br>
     <form action="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete">
+        <input type="submit" value="Delete" class="btn btn-outline-danger">
     </form>
     <hr>
     <h3>Purpose:</h3> 
