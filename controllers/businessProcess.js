@@ -14,8 +14,8 @@ const router = express.Router()
 
 
 // New route
-router.get("/new/:capabilityId", (req, res)=>{
-    res.render("business_process/new.ejs", { capabilityId: req.params.capabilityId })
+router.get("/:capabilityName/:capabilityId/new", (req, res)=>{
+    res.render("business_process/new.ejs", { capabilityId: req.params.capabilityId, capabilityName: req.params.capabilityName })
 })
 
 

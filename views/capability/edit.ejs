@@ -17,7 +17,8 @@
             <fieldset>
 
                 <legend>Edit <%= capability.capabilityName %></legend>
-
+                <br>
+                <hr>
                 <label> Capability Name:
                     <input 
                         type="text" 
@@ -25,8 +26,9 @@
                         value="<%= capability.capabilityName %>"
                         placeholder = "<%= capability.capabilityName %>">
                 </label>
-
+                <br><br>
                 <label> Value enabled by this capability:
+                    
                     <!-- <input 
                         type="text" 
                         name="valueEnabled" 
@@ -41,9 +43,9 @@
                 </label>
 
             </fieldset>
-
-            <input type="submit" class= "btn btn-primary" value="Save changes">
-        
+            <br>
+            <input type="submit" value="Save changes" class="btn btn-outline-primary">
+            <a href="/capabilities/<%= capability._id %>"><button class="btn btn-outline-danger">Cancel</button></a>
         </form>
     </div>
     

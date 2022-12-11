@@ -4,25 +4,46 @@
 
 <body>
     <%- include('../partials/header.ejs') %>
+    <hr>
+
+   
+
+
 <main>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/businessprocesses/<%= capabilityName %>/<%= capabilityId %>/index">Back</a>
+        </li>
+    </ul>
+    <hr>
     <div>
-        <form action="/businessprocesses/<%= capabilityId %>" method="POST">
+        <form class="mb-3" action="/businessprocesses/<%= capabilityId %>" method="POST">
             <fieldset>
-                <legend> Add Business Process </legend>
-
-                <label>
+                <legend> Add Business Process for <%= capabilityName %> </legend>
+                <hr>
+                <label class="form-label">
                     Business process name:
-                    <input type="text" name="name" required>
                 </label>
-                <label>
+                    
+                    <input class="form-control" type="text" name="name" required>
+                <br>
+                <label class="form-label">
                     Purpose:
-                    <input type="text" name="purpose" required>
                 </label>
+                    <!-- <textarea class="form-control" type="text" name="purpose" required> -->
+                        <textarea class="form-control" name="purpose"  cols="30" rows="10" required></textarea>
             </fieldset>
-
-            <input type="submit" value="Add Business Process">
+            <br>
+            <input type="submit" value="Add Business Process" type="button" class="btn btn-outline-primary">
             
         </form>
+
+        <a href="/businessprocesses/<%= capabilityName %>/<%= capabilityId %>/index">
+            <button class="btn btn-outline-danger">
+                Cancel
+            </button>
+        </a>
+
     </div>
 </main>
 

@@ -15,24 +15,28 @@
 <hr>
 <main>
     <div>
-        <form action="/capabilities" method="POST">
+        <form action="/capabilities" method="POST" class="mb-3">
             <fieldset>
                 <legend> Add Capability </legend>
 
-                <label>
+                <label class="form-label">
                     Capability name:
-                    <input type="text" name="capabilityName" required>
                 </label>
-                <label>
-                    Value enabled by this capability:
-                    <input type="text" name="valueEnabled" required>
-                </label>
-            </fieldset>
 
-            <input type="submit" value="Add capability">
+                <input type="text" name="capabilityName" class="form-control" required>
+               
+                <br>
+                <label class="form-label">
+                    Value enabled by this capability:</label>
+                    <!-- <input type="text" name="valueEnabled" class="form-control" required> -->
+                    <textarea name="valueEnabled"  cols="30" rows="10" wrap></textarea>
+                
+            </fieldset>
+            <br>
+            <input type="submit" value="Add capability" type="button" class="btn btn-outline-primary">
             
         </form>
-        <a href="/capabilities"><button>CANCEL</button></a>
+        <a href="/capabilities"><button type="button" class="btn btn-outline-danger">Cancel</button></a>
     </div>
 </main>
 

@@ -5,14 +5,24 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <hr>
-    <nav>
+    <!-- <nav>
         <div class="nav-item">
             <a class="nav-link" href="/capabilities">Back</a>
         </div>
-    </nav>
+    </nav> -->
+
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/capabilities">Back to Capabilities</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/businessprocesses/<%= capability.capabilityName %>/<%= capability._id %>/index"> View Processes </a>
+        </li>      
+    </ul>
+
     <hr>
         <a href="/capabilities/<%=capability._id%>/edit">
-            <button>
+            <button type="button" class="btn btn-outline-secondary">
                 Edit Capability
             </button>    
         </a>
@@ -20,7 +30,7 @@
         <br><br>
 
         <form action="/capabilities/<%= capability._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete"> 
+            <input type="submit" value="Delete" class="btn btn-outline-danger"> 
         </form>
         <!-- <hr>
         <a href="/businessprocesses/new/<%=capability._id%>">Add Business Process</a> -->
@@ -32,7 +42,7 @@
             <div class="row">
                 <div class="col">
                     
-                    <a href="/businessprocesses/<%= capability.capabilityName %>/<%= capability._id %>/index"><button> View Processes </button> </a>
+                    <!-- <a href="/businessprocesses/<%= capability.capabilityName %>/<%= capability._id %>/index"><button> View Processes </button> </a> -->
                     
 
 
