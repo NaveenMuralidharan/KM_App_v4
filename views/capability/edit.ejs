@@ -27,16 +27,22 @@
                 </label>
 
                 <label> Value enabled by this capability:
-                    <input 
+                    <!-- <input 
                         type="text" 
                         name="valueEnabled" 
                         value="<%= capability.valueEnabled %>"
-                        placeholder = "<%= capability.valueEnabled %>">
+                        placeholder = "<%= capability.valueEnabled %>"> -->
+                        <input 
+                        type="text" 
+                        name="valueEnabled" 
+                        value="<%= capability.valueEnabled %>"
+                        placeholder = "<%= capability.valueEnabled %>"
+                        style= "width: 80%;height:100px">
                 </label>
 
             </fieldset>
 
-            <input type="submit" value="Save changes">
+            <input type="submit" class= "btn btn-primary" value="Save changes">
         
         </form>
     </div>

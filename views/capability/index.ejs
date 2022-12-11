@@ -4,14 +4,17 @@
 
 <body>
     <%- include('../partials/header.ejs') %>
-<nav>
-    <!-- <a href="/capabilities/new"    > Add capability </a> -->
-    <nav>
-        <a href="/">How it works</a>
-        <a href="/capabilities/new">Add Capability</a>
-        
-    </nav>
-</nav>
+    <hr>
+<ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link" href="/">How it works</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/capabilities/new">Add Capability</a>
+    </li>   
+    
+</ul>
+<hr>
     <div class = "container" >
         <% capabilities.forEach((capability, i)=>{ %>
 

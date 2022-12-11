@@ -4,6 +4,15 @@
 
 <body>
     <%- include('../partials/header.ejs') %>
+<hr>
+    <ul class="nav">
+
+        <li class="nav-item">
+            <a class="nav-link" href="/capabilities">Back</a>
+        </li>
+       
+    </ul>
+<hr>
 <main>
     <div>
         <form action="/capabilities" method="POST">
@@ -23,6 +32,7 @@
             <input type="submit" value="Add capability">
             
         </form>
+        <a href="/capabilities"><button>CANCEL</button></a>
     </div>
 </main>
 
