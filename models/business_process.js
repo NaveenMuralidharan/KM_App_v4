@@ -13,7 +13,9 @@ const { Schema, model } = mongoose
 const businessProcessSchema = new Schema({
                                             name: String,
                                             purpose: String,
-                                            capabilityId: String
+                                            capabilityId: String,
+                                            processOwner: String,
+                                            processOwnerId: String
                                             
                                         })
 

@@ -14,14 +14,31 @@
     <hr>
     <h3><%= businessProcess.name %> Process Document</h3>
     <br>
-    <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit"><button class="btn btn-outline-primary">Edit Process</button></a>
-    <br><br>
-    <form action="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete" class="btn btn-outline-danger">
-    </form>
+
+    <% if(showOptions){ %>
+        <div class="container">
+            <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit"><button class="btn btn-outline-primary">Edit Process</button></a>
+            <br><br>
+            <form action="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete" class="btn btn-outline-danger">
+            </form>
+        </div>
+    <% } %> 
+    
+    <!-- <div class="container">
+        <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit"><button class="btn btn-outline-primary">Edit Process</button></a>
+        <br><br>
+        <form action="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete" class="btn btn-outline-danger">
+        </form>
+    </div> -->
+    
     <hr>
-    <h3>Purpose:</h3> 
-    <p><%= businessProcess.purpose %></p>
+    <div class="container">
+        <p>Process Owner: <%= businessProcess.processOwner %></p>
+        <h3>Purpose:</h3> 
+        <p><%= businessProcess.purpose %></p>
+    </div>
 
     <!-- <a href="/businessprocesses/<%= capabilityId %>/<%= businessProcess._id %>/edit">Edit</a> -->
 

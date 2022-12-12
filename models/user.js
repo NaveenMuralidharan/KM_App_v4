@@ -11,7 +11,8 @@ const { Schema, model } = mongoose
 //make user schema
 const userSchema = new Schema({
     username: {type: String, required: true, unique: true},
-    password: {type: String, required: true}
+    password: {type: String, required: true},
+    roleLevel: String
 })
 
 //make user model

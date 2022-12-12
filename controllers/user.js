@@ -21,7 +21,7 @@ router.get("/signup", (req, res)=>{
 
 // Signup post page - CREATE new user
 router.post("/signup", async (req, res)=>{
-
+    console.log("signup post "+req.body.roleLevel)
     //encrypt password
     req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10))
 
@@ -60,8 +60,10 @@ router.post("/login", (req, res)=>{
                 // save login info to req.session
                 req.session.username = username
                 req.session.loggedIn = true
-
+                req.session.roleLevel = user.roleLevel
+                req.session.userId = user._id
                 res.redirect("/")
+
             } else {
                 res.send("wrong password")
             }

@@ -10,20 +10,31 @@
         </li>
     </ul>
     <hr>
+    <div class="container">
 
-    <form action="" method="post" class="mb-3">
-        <legend>Signup</legend>
-        
-        <label class="form-label"> Username: </label>
-        <input type="text" class="form-control" name="username">
+        <form action="" method="post" class="mb-3">
+            <legend>Signup</legend>
 
-        <label class="form-label">Password:</label>
-        <input type="password" name="password" class="form-control">
+            <label class="form-label"> Username: </label>
+            <input type="text" class="form-control" name="username">
 
-        <input type="submit" value="Signup" class="btn btn-outline-primary">
+            <label class="form-label">Password:</label>
+            <input type="password" name="password" class="form-control">
 
-        <a href="/"><button class="btn btn-outline-danger">Cancel</button></a>
-    </form>
+            
+            <div class="form-group">
+                <label class="form-label">Role: </label>
+                <select name="roleLevel" class="form-control">
+                    <option value="Level 1">Level 1</option>
+                    <option value="Level 2">Level 2</option>
+                </select> 
+            </div>
+
+            <input type="submit" value="Signup" class="btn btn-outline-primary">
+
+            <a href="/"><button class="btn btn-outline-danger">Cancel</button></a>
+        </form>
+    </div>
 
 </body>
 </html>

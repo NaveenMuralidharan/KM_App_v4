@@ -53,7 +53,7 @@ router.post("/:capabilityId", (req, res)=>{
     // which capability business process belongs to, push 
     
     req.body.capabilityId = req.params.capabilityId
-
+    req.body.processOwnerId = req.session.userId
 
     BusinessProcess.create(req.body, (err, data)=>{
         
@@ -93,9 +93,18 @@ router.get("/:capabilityId/:businessProcessId", (req, res)=>{
     BusinessProcess.findById(req.params.businessProcessId, (err, data)=>{
 
         console.log("found bp "+data)
- 
+        
+        console.log(req.session.userId)
+        console.log(data.processOwnerId)
+        // if session userID is same as process owner id,
+        if(req.session.userId === data.processOwnerId){
+            console.log("its PO! can show options")
+            res.render("business_process/show.ejs", { businessProcess : data, capabilityId: req.params.capabilityId, showOptions: true })
+        } else {
+            res.render("business_process/show.ejs", { businessProcess : data, capabilityId: req.params.capabilityId, showOptions: false })
+        }
 
-        res.render("business_process/show.ejs", { businessProcess : data, capabilityId: req.params.capabilityId })
+        
 
 
     })
