@@ -9,6 +9,8 @@ const morgan = require("morgan")
 const CapabilityRouter = require("./controllers/capability")
 const BusinessProcessRouter = require("./controllers/businessProcess")
 const UserRouter = require("./controllers/user")
+const session = require("express-session")
+const MongoStore = require("connect-mongo")
 
 // const mongoose = require("mongoose")
 
@@ -61,10 +63,18 @@ app.use(morgan("tiny"))//logger
 app.use(methodOverride("_method"))//override for put and delete reqs from forms
 app.use(express.urlencoded({extended:true}))//parse url encoded req bodies
 app.use(express.static("public"))//serve files from public folder, statically
+
+app.use(session({
+    secret: process.env.SECRET,
+    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
+    saveUninitialized: true,
+    resave: false
+}))
+
 app.use("/capabilities", CapabilityRouter)
 app.use("/businessprocesses", BusinessProcessRouter)
 app.use("/users", UserRouter)
-app.use(express.static("public")) // serve files from public statically
+
 
 //////////////////
 /////Routes

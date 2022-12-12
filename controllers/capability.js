@@ -12,12 +12,20 @@ const Capability = require("../models/capability")
 
 const router = express.Router()
 
-// Router middleware
 
+/////////////////////
+// Router middleware
+///////////////////////
+// Authorization middleware
+router.use((req, res, next)=>{
+    if(req.session.loggedIn){
+        next()
+    } else {
+        res.redirect("/users/login")
+    }
+})
 
 // ROUTES
-
-
 
 // SEED route
 router.get("/seed", (req, res)=>{
@@ -58,6 +66,7 @@ router.get("/seed", (req, res)=>{
 // INDEX route
 router.get("/", (req, res)=>{
 
+    console.log("req session is "+ req.session.is)
     //fetch all capabilities from db
     Capability.find({}, (err, data)=>{
         res.render("capability/index.ejs", { capabilities: data })
