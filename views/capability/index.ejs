@@ -24,23 +24,38 @@
             <div class="row">
 
                 <div class="col">
-
+<!-- 
                     <h4> <%= i + 1 %>.
 
                         <a href="/capabilities/<%= capability._id %>">
                             <%= capability.capabilityName %>
                         </a> 
                     
-                    </h4>
+                    </h4> -->
+
+                    
+                    
+
+                        <a href="/capabilities/<%= capability._id %>">
+                             <%= i + 1 %>. <%= capability.capabilityName %> 
+                        </a> 
+                    
+                    
 
                 </div>
                 
-                <div class="col text-truncate">
-                    <p>
+                <!-- <div class="col text-truncate">
+                    <p class="container">
                         <%= capability.valueEnabled %>
                     </p>
                     
-                </div>    
+                </div>    -->
+                <div class="col text-truncate">
+                   
+                        <%= capability.valueEnabled %>
+               
+                    
+                </div>  
             </div>
             <hr>    
                 

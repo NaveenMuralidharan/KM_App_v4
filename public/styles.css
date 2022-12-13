@@ -13,3 +13,7 @@ body {
 .howTo {
     color: #434242;
 }
+
+.wrap {
+    word-wrap: break-word;
+}
