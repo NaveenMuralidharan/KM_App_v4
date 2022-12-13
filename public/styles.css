@@ -1,3 +1,15 @@
 body {
-    background-color: aliceblue;
+    background-color: #F3EFE0;
+}
+
+.title {
+    color: #434242;
+}
+
+.navlinks {
+    color: #22A39F;
+}
+
+.howTo {
+    color: #434242;
 }

@@ -13,30 +13,38 @@
         <!-- <a href="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>">Back</a> -->
     </ul>
     <hr>
-    <form action="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>?_method=PUT" method="post" class="mb-3">
-        <fieldset>
-
-            <legend> Edit Business Process </legend>
-
-            <label> Name: 
-                <input type="text" name="name" value="<%= businessProcess.name %>">
-            </label>
-
-            <label> Purpose: 
-                <input type="text" name="purpose" value="<%= businessProcess.purpose %>">
-            </label>
-
-            <label>Process Owner: </label>
+    <div class="container">
+        <form class="mb-3" action="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>?_method=PUT" method="post" class="mb-3">
+            
+            <fieldset>
+    
+                <legend> Edit Business Process </legend>
+                <hr>
+                <label> Process Name: 
+                    <input type="text" name="name" value="<%= businessProcess.name %>">
+                </label>
+                <br><br>
+                <label>Process Owner: </label>
                 <input type="text" name="processOwner" value="<%= businessProcess.processOwner %>">
-        </fieldset>
-
-        <input type="submit" value="Save changes" class="btn btn-outline-primary">
-        <a href="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>">
-            <button class="btn btn-outline-danger">
-                Cancel
-            </button>
-        </a>
-    </form>
+                <br><br>
+                <label> Purpose: </label>
+                    <!-- <input type="text" name="purpose" value="<%= businessProcess.purpose %>"> -->
+                    <textarea class="form-control" name="purpose" cols="30" rows="10" required>
+                        <%= businessProcess.purpose %>
+                    </textarea>
+    
+               
+            </fieldset>
+            <br> <br>
+            <input type="submit" value="Save changes" class="btn btn-outline-primary">
+            <a href="/businessprocesses/<%= capabilityId %>/<%=businessProcess._id%>">
+                <button class="btn btn-outline-danger">
+                    Cancel
+                </button>
+            </a>
+        </form>
+    </div>
+    
 
 
     

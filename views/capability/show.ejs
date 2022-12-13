@@ -13,14 +13,15 @@
 
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="/capabilities">Back to Capabilities</a>
+            <a class="nav-link navlinks" href="/capabilities">Back to Capabilities</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/businessprocesses/<%= capability.capabilityName %>/<%= capability._id %>/index"> View Processes </a>
+            <a class="nav-link navlinks" href="/businessprocesses/<%= capability.capabilityName %>/<%= capability._id %>/index"> View Processes </a>
         </li>      
     </ul>
 
     <hr>
+    <div class="container">
         <a href="/capabilities/<%=capability._id%>/edit">
             <button type="button" class="btn btn-outline-secondary">
                 Edit Capability
@@ -32,6 +33,8 @@
         <form action="/capabilities/<%= capability._id %>?_method=DELETE" method="POST">
             <input type="submit" value="Delete" class="btn btn-outline-danger"> 
         </form>
+    </div>
+
         <!-- <hr>
         <a href="/businessprocesses/new/<%=capability._id%>">Add Business Process</a> -->
 
