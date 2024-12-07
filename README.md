@@ -60,8 +60,73 @@ This app allows users to build easy-to-use knowledge maps and process documents 
    ```bash
    git clone https://github.com/NaveenMuralidharan/KM_App_v4.git
    cd KM_App_v4
+2. **Install dependencies:
+   ```bash
+      npm install
+   ```
+3. **Setup MongoDB:
+Ensure MongoDB is running (locally or using MongoDB Atlas).
+Create a .env file in the backend root directory and add your MongoDB URI:
+```bash
+   MONGO_URI=your_mongo_database_uri
+```
+4. **Run the application:
+```bash
+   npm start
+```
+The application should now be running at http://localhost:3000.
 
+## Usage
 
+### Frontend Routes:
+- **Homepage**: Navigate to `/process` to view all process maps.
+- **View a Process Map**: Navigate to `/process/:id` to view the details of a specific process map.
+- **Create a Process Map**: Use the `POST /process` route with the required JSON body to create a new process map.
+- **Update a Process Map**: Use the `PUT /process/:id` route to update a process map by its ID.
+- **Delete a Process Map**: Use the `DELETE /process/:id` route to delete a process map by its ID.
 
+---
 
-## Github link
+## Contributing
+
+We welcome contributions to improve **KM_App_v4**. To contribute:
+
+1. **Fork the repository**.
+2. **Create a new branch** (`git checkout -b feature-name`).
+3. **Make your changes** and commit them (`git commit -am 'Add new feature'`).
+4. **Push to the branch** (`git push origin feature-name`).
+5. **Open a pull request**.
+
+### Code Style
+- Ensure that your code adheres to the style conventions used in this project.
+- Write clear, concise commit messages.
+
+### Testing
+To run tests, use the following command:
+
+```bash
+npm test
+```
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contact
+
+For any questions or inquiries, please contact:
+
+- **Author**: Naveen Muralidharan
+- **Email**: [naveenspec@gmail.com](mailto:naveenspec@gmail.com) 
+
+---
+
+## Future Improvements
+
+- **Add Authentication**: Implement JWT-based authentication to secure the API.
+- **Rate Limiting**: Add rate-limiting to prevent abuse of the API.
+- **Swagger Documentation**: Integrate Swagger to auto-generate API documentation.
+- **Add Unit Tests for Routes**: Write comprehensive unit tests for all endpoints.
+- **Improve Error Handling**: Enhance error handling to return more detailed error messages.
+
