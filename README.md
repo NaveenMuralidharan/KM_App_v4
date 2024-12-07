@@ -3,9 +3,6 @@
 ## Description of the app:
 This app allows users to build easy-to-use knowledge maps and process documents to meet  information needs
 
-## Deployed App link
-[KNOWLEDGE MAP](https://turmeric-project2.onrender.com/capabilities) 
-
 
 ## Link to planning Trello board:
 [TRELLO BOARD](https://trello.com/invite/b/hyKmhNsr/ATTI749f54c8d77da1773b9f1c9550761dbf23FAADFA/project-2)
